@@ -1,0 +1,46 @@
+<div class="text-center border border-light p-5">
+  <p class="h4 mb-4">Get Coupons By Type</p>
+  <form #getCouponsByTypeForm="ngForm" class="was-validated text-center border border-light p-5">
+    <div class="form-row justify-content-center">  
+     <div class="col-5">  
+      <div class="col-6">Please Enter Coupon Type:</div>
+      <select class="form-control mb-4" required
+        (ngModel)="coupon.couponType" #couponType="ngModel" name="couponType">
+        <option>FOOD</option>
+        <option>MUSIC</option>
+        <option>HEALTH</option>
+        <option>SPORTS</option>
+        <option>THEATRE</option>
+      </select>
+     </div>  
+    </div>
+      <button mdbBtn color="info" block="true" class="my-4" (click)="getCouponsByType(couponType.value)"
+       [disabled]="!getCouponsByTypeForm.valid">Get!</button>
+    </form>
+  <table class="table table-striped">
+      <tr>
+        <th>Coupon Id</th>
+        <th>Title</th>
+        <th>Message</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Type</th>
+        <th>Image Url</th>
+      </tr>
+      <tr *ngFor="let c of coupons">
+        <td>{{c.id}}</td>
+        <td>{{c.title}}</td>
+        <td>{{c.message}}</td>
+        <td>{{c.price}}</td>
+        <td>{{c.amount}}</td>
+        <td>{{c.startDate}}</td>
+        <td>{{c.endDate}}</td>
+        <td>{{c.type}}</td>
+        <td>
+          <img style="max-width: 150px" src="{{c.image}}">
+      </td>
+    </tr>
+  </table>
+  </div>

@@ -1,0 +1,41 @@
+<div class="text-center border border-light p-5">
+  <p class="h4 mb-4">Get Purchased Coupons By Price</p>
+  <form #getPurchasedCouponsByPriceForm="ngForm" class="was-validated text-center border border-light p-5">
+      <div class="form-row justify-content-center">  
+       <div class="col-5">  
+        <input type="number" class="form-control mb-4" placeholder="Please Enter Price" required
+          (ngModel)="coupon.price" #couponPrice="ngModel" name="price">
+        </div>
+      </div>
+  
+      <button mdbBtn color="info" block="true" class="my-4" (click)="getPurchasedCouponsByPrice(couponPrice.value)"
+         [disabled]="!getPurchasedCouponsByPriceForm.valid">Get!</button>    
+    </form>
+  
+  <table class="table table-striped">
+      <tr>
+        <th>Coupon Id</th>
+        <th>Title</th>
+        <th>Message</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Type</th>
+        <th>Image Url</th>
+      </tr>
+      <tr *ngFor="let c of coupons">
+        <td>{{c.id}}</td>
+        <td>{{c.title}}</td>
+        <td>{{c.message}}</td>
+        <td>{{c.price}}</td>
+        <td>1</td>
+        <td>{{c.startDate}}</td>
+        <td>{{c.endDate}}</td>
+        <td>{{c.type}}</td>
+        <td>
+          <img style="max-width: 150px" src="{{c.image}}">
+      </td>
+    </tr>
+  </table>
+  </div>

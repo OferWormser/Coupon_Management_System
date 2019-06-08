@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" routerLink="./" routerLinkActive="active">Customer Page</a>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="purchaseCoupon" routerLinkActive="active">Purchase Coupon</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="getAllPurchasedCoupons" routerLinkActive="active">
+          Get All Purchased Coupons</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="getPurchasedCouponsByType" routerLinkActive="active">
+          Get Purchased Coupons By Type</a>
+      </li>    
+      <li class="nav-item">
+        <a class="nav-link" routerLink="getPurchasedCouponsByDate" routerLinkActive="active">
+          Get Purchased Coupons By Date</a>
+      </li>    
+      <li class="nav-item">
+        <a class="nav-link" routerLink="getPurchasedCouponsByPrice" routerLinkActive="active">
+          Get Purchased Coupons By Price</a>
+      </li>    
+    </ul>
+  </div>  
+  <div class="collapse navbar-collapse justify-content-right" id="navbarCollapse">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

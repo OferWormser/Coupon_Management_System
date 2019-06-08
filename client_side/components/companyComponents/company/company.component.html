@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" routerLink="./" routerLinkActive="active">&nbsp;Company Page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="createCoupon" routerLinkActive="active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create Coupon&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="coupons" routerLinkActive="active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coupons&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      </li>   
+      <li class="nav-item">
+        <a class="nav-link" routerLink="getCouponsByType" routerLinkActive="active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get Coupons By Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      </li>   
+      <li class="nav-item">
+        <a class="nav-link" routerLink="getCouponsByDate" routerLinkActive="active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get Coupons By Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      </li>   
+      <li class="nav-item">
+        <a class="nav-link" routerLink="getCouponsByPrice" routerLinkActive="active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get Coupons By Price&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      </li>   
+    </ul>
+  </div>  
+  <div class="collapse navbar-collapse justify-content-right" id="navbarCollapse">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

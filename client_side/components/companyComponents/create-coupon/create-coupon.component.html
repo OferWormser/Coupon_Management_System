@@ -1,0 +1,34 @@
+<form #createCouponForm="ngForm" class="was-validated text-center border border-light p-5">
+  <p class="h4 mb-4">Create Coupon</p>
+  <div class="form-row justify-content-center">
+    <div class="col-5">
+      <input type="text" class="form-control mb-4" placeholder="Coupon Title" required
+      [(ngModel)]="coupon.title" #couponTitle="ngModel" name="title">
+      <input type="text" class="form-control mb-4" placeholder="Message" required
+      [(ngModel)]="coupon.message" #couponMessage="ngModel" name="message">
+      <input type="number" class="form-control mb-4" placeholder="Price" required
+      [(ngModel)]="coupon.price" #couponPrice="ngModel" name="price">
+      <input type="number" class="form-control mb-4" placeholder="Amount" required
+      [(ngModel)]="coupon.amount" #couponAmount="ngModel" name="amount">
+      <div class="col-3">Start date:</div>
+      <input type="date" class="form-control mb-4" placeholder="Start Date" required
+      [(ngModel)]="coupon.startDate" #couponStartDate="ngModel" name="startDate">
+      <div class="col-3">End date:</div>
+      <input type="date" class="form-control mb-4" placeholder="End Date" required
+      [(ngModel)]="coupon.endDate" #couponEndDate="ngModel" name="endDate">
+      <div class="col-3">Coupon Type:</div>
+      <select class="form-control mb-4" required [(ngModel)]="coupon.type" #couponType="ngModel"
+      name="type">
+        <option>FOOD</option>
+        <option>MUSIC</option>
+        <option>HEALTH</option>
+        <option>SPORTS</option>
+        <option>THEATRE</option>
+      </select>
+      <input type="text" class="form-control mb-4" placeholder="Image Url" required
+      [(ngModel)]="coupon.image" #couponImageUrl="ngModel" name="image">
+    </div>
+  </div>
+  <button mdbBtn color="info" block="true" class="my-4" (click)="createCoupon()" [disabled]="!createCouponForm.valid">
+    Create Coupon</button>
+</form>

@@ -1,0 +1,17 @@
+<div class="text-center border border-light p-5">
+<p class="h4 mb-4">Companies</p>
+<table class="table table-striped">
+    <tr>
+      <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Company Id</th>
+      <th>Company Name</th>
+      <th>Company Email</th>
+    </tr>
+    <tr *ngFor="let c of companies">
+      <td>{{c.id}}</td>
+      <td>
+        <a routerLink="/rest/admin/companies/{{c.id}}">{{c.compName}}</a>
+      </td>
+      <td>{{c.email}}</td>
+    </tr>
+</table>
+</div>

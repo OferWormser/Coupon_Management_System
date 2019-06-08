@@ -1,0 +1,13 @@
+<form #createCustomerForm="ngForm" class="was-validated text-center border border-light p-5">
+  <p class="h4 mb-4">Create Customer</p>
+  <div class="form-row justify-content-center">
+    <div class="col-5">
+      <input type="text" class="form-control mb-4" placeholder="Customer Name" required
+      [(ngModel)]="customer.custName" #customerName="ngModel" name="custName">
+      <input type="password" class="form-control mb-4" placeholder="Customer Password" required
+      [(ngModel)]="customer.password" #customerPassword="ngModel" name="password">
+    </div>
+  </div>
+  <button mdbBtn color="info" block="true" class="my-4" [disabled]="!createCustomerForm.valid" (click)="createCustomer()">
+    Create Customer</button>
+</form>

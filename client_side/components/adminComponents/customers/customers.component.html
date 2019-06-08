@@ -1,0 +1,15 @@
+<div class="text-center border border-light p-5">
+  <p class="h4 mb-4">Customers</p>
+  <table class="table table-striped">
+      <tr>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Customer Id</th>
+        <th>Customer Name</th>
+      </tr>
+      <tr *ngFor="let c of customers">
+        <td>{{c.id}}</td>
+        <td>
+            <a routerLink="/rest/admin/customers/{{c.id}}">{{c.custName}}</a>
+        </td>
+      </tr>
+  </table>
+  </div>

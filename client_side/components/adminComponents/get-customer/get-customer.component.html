@@ -1,0 +1,31 @@
+<div class="text-center border border-light p-5">
+  <p class="h4 mb-4">{{customer.custName}}</p>
+  <table class="table table-striped">
+      <tr>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Customer Id</th>
+        <th>Customer Name</th>
+        <th>Remove</th>
+      </tr>
+      <tr>
+        <td>{{customer.id}}</td>
+        <td>{{customer.custName}}</td>
+        <td>
+          <button mdbBtn color="info" block="true" class="my-4" type="submit" (click)="removeCustomer()">Remove Customer</button>
+        </td>
+      </tr>
+  </table>
+  </div>
+
+  <form #updateCustomerForm="ngForm" class="was-validated text-center border border-light p-5">
+    <p class="h4 mb-4">Update Customer</p>
+    <div class="form-row justify-content-center">
+      <div class="col-5">
+        <input type="password" class="form-control mb-4" placeholder="New Customer Password" required
+        (ngModel)="customer.password" #customerPassword="ngModel" name="password">
+      </div>
+    </div>
+    <button mdbBtn color="info" block="true" class="my-4" 
+    (click)="updateCustomer(customerPassword.value); updateCustomerForm.reset()" 
+    [disabled]="!updateCustomerForm.valid">Update Customer</button>
+  </form>
+  
